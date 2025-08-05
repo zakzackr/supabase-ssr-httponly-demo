@@ -1,0 +1,1 @@
+# supabase-ssr-demo-app-with-httponly-cookie
