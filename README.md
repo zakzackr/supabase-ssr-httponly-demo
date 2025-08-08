@@ -1,1 +1,3 @@
-# supabase-ssr-demo-app-with-httponly-cookie
+# Memo
+
+-   Authentication → Sign In / Providers → Turn Off Confirm Email
