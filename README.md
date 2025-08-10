@@ -14,7 +14,7 @@ Implements Magic Link authentication with complete server-side session managemen
 -   Magic Link passwordless authentication
 -   Server-side session management with secure cookies(httpOnly, sameSite, secure, etc.)
 -   Protected routes with middleware
--   Uses new API keys
+-   New API keys
 
 ## Prerequisites
 
