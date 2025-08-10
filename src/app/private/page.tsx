@@ -1,8 +1,6 @@
-// src/app/private/page.tsx
-
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { AuthTest } from "@/components/AuthTest";
+import { UserProfile } from "@/components/UserProfile";
 import type { User } from "@supabase/supabase-js";
 
 export default async function PrivatePage() {
@@ -26,15 +24,10 @@ export default async function PrivatePage() {
                     Welcome! This page is protected and can only be seen by
                     logged-in users.
                 </p>
-                <p className="mt-2">
-                    This is an example of a user-specific page, like a dashboard
-                    or account settings.
-                </p>
-            </div>
-
-            {/* Component to display user information */}
-            <div className="mt-8">
-                <AuthTest user={user as User} />
+                {/* Component to display user information */}
+                <div className="mt-8">
+                    <UserProfile user={user as User} />
+                </div>
             </div>
         </main>
     );

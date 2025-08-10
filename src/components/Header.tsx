@@ -1,24 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { logout } from "@/app/auth/actions/route";
-import { useAuth } from "./AuthProvider";
+import { logout } from "@/app/auth/actions";
+import { User } from "@supabase/supabase-js";
 
-export function Header() {
-    const { user, isLoading } = useAuth();
-
-    console.log("Header render:", { user: user?.email, isLoading });
-
-    if (isLoading) {
-        return (
-            <header className="bg-gray-800 text-white p-4">
-                <nav className="container mx-auto flex justify-between items-center">
-                    <div>Loading...</div>
-                </nav>
-            </header>
-        );
-    }
-
+export function Header({ user }: { user: User | null }) {
     return (
         <header className="bg-gray-800 text-white p-4">
             <nav className="container mx-auto flex justify-between items-center">
@@ -26,8 +10,6 @@ export function Header() {
                     <Link href="/" className="hover:text-gray-300">
                         Home
                     </Link>
-                    {/* <Link href="/public" className="hover:text-gray-300">Public</Link>
-                    <Link href="/private" className="hover:text-gray-300">Private</Link> */}
                 </div>
 
                 <div className="flex items-center space-x-4">

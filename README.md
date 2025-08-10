@@ -17,3 +17,8 @@
 [Listen to auth events](https://supabase.com/docs/reference/javascript/auth-onauthstatechange)
 
 [j4w8n/sveltekit-supabase-ssr](https://github.com/j4w8n/sveltekit-supabase-ssr)
+
+# Memo
+
+-   サーバー側でのみ認証状態を管理
+-   クライアント側では状態変更をサーバー API 経由で行う

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/components/AuthProvider";
 import { Header } from "@/components/Header";
 import { createClient } from "@/lib/supabase/server";
 
@@ -37,10 +36,8 @@ export default async function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <AuthProvider initialUser={user}>
-                    <Header />
-                    {children}
-                </AuthProvider>
+                <Header user={user} />
+                {children}
             </body>
         </html>
     );

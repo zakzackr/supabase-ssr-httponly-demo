@@ -48,3 +48,12 @@ export async function login(
         message: "A confirmation email has been sent. Please check your inbox.",
     };
 }
+
+export async function logout() {
+    const supabase = await createClient();
+    await supabase.auth.signOut();
+    
+    // Clear cached user data across the app
+    revalidatePath("/", "layout");
+    return redirect("/");
+}
