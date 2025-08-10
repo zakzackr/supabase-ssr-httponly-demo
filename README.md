@@ -21,6 +21,38 @@ Implements Magic Link authentication with complete server-side session managemen
 1. A Supabase account.
 2. A Supabase project.
 
+## Project Structure
+
+```
+supabase-ssr-httponly-demo/
+├── src/
+│   ├── app/
+│   │   ├── auth/
+│   │   │   ├── actions.ts          # Server Actions for login/logout
+│   │   │   └── confirm/
+│   │   │       └── route.ts        # Magic Link confirmation handler
+│   │   ├── login/
+│   │   │   └── page.tsx            # Login page with Magic Link form
+│   │   ├── private/
+│   │   │   └── page.tsx            # Protected page (auth required)
+│   │   ├── public/
+│   │   │   └── page.tsx            # Public page (no auth required)
+│   │   ├── layout.tsx              # Root layout with Header
+│   │   └── page.tsx                # Home page
+│   ├── components/
+│   │   ├── Header.tsx              # Navigation header (Server Component)
+│   │   └── UserProfile.tsx         # User info display component
+│   ├── lib/
+│   │   └── supabase/
+│   │       ├── client.ts           # Client-side Supabase client
+│   │       ├── server.ts           # Server-side Supabase client
+│   │       └── middleware.ts       # Handles Supabase session updates and authentication in middleware
+│   └── middleware.ts               # Next.js middleware for auth
+├── .env.example                    # Environment variables template
+├── README.md
+└── ...
+```
+
 ## Install
 
 ```
