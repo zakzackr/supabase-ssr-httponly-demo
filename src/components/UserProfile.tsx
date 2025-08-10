@@ -6,6 +6,10 @@ interface UserProfileProps {
     user: User;
 }
 
+/**
+ * UserProfile component
+ * Shows authenticated user's ID and email information
+ */
 export function UserProfile({ user }: UserProfileProps) {
     return (
         <div className="p-5 border-2 border-gray-300 bg-gray-50 rounded-lg w-xl">

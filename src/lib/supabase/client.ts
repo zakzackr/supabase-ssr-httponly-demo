@@ -1,7 +1,8 @@
 import { createBrowserClient } from "@supabase/ssr";
 
 /**
- * create client-side supabase clinet
+ * Create client-side Supabase client
+ * to access Supabase from Client Components, which run in the browser.
  *
  * ref:https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=app
  */

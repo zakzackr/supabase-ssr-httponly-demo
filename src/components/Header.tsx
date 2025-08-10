@@ -2,6 +2,10 @@ import Link from "next/link";
 import { logout } from "@/app/auth/actions";
 import { User } from "@supabase/supabase-js";
 
+/**
+ * Navigation header component with authentication-aware UI
+ * Shows login/logout buttons based on user authentication status
+ */
 export function Header({ user }: { user: User | null }) {
     return (
         <header className="bg-gray-800 text-white p-4">

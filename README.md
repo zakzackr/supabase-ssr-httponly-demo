@@ -10,6 +10,46 @@
     https://github.com/supabase/ssr/blob/main/src/cookies.ts
     L34(createStorageFromOptions. cannot access httponly cookie using document.cookie API)
 
+# Why MagicLink
+
+password-less authentication
+
+https://supabase.com/docs/guides/auth/auth-email-passwordless?queryGroups=language&language=js
+
+```
+improve the user experience by not requiring users to create and remember a password
+Increase security by reducing the risk of password-related security breaches
+Reduce support burden of dealing with password resets and other password-related flows
+```
+
+# MagicLink Settings
+
+go to Auth Template page in your dashboard: Authentication→Emails→Template tab→Magic Link
+update the Magic Link template
+example:
+
+<h2>Magic Link</h2>
+<p>Follow this link to login:</p>
+<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/">Log In</a></p>
+
+Site URL and Redirect URLs - link
+
+Ensure these are set.
+
+Site:
+http://localhost:3002
+Redirects:
+http://localhost:3002/auth/confirm
+
+# Upside
+
+-   improve security
+
+# Downside
+
+-   cannot call getUser from client-side supabase client
+-   cannot use onAuthStateChange with client-side supabase client
+
 # References
 
 [Setting up Server-Side Auth for Next.js](https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=app)

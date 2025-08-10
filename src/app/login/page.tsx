@@ -3,7 +3,11 @@
 import { useActionState } from "react";
 import { login } from "../auth/actions";
 
+/**
+ * Login page component for Magic Link authentication
+ */
 export default function loginPage() {
+    // useActionState manages Server Action state and provides form action and pending status
     const [loginState, loginAction, isLoginPending] = useActionState(
         login,
         null

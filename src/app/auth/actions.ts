@@ -10,6 +10,10 @@ type AuthState = {
     message?: string;
 };
 
+/**
+ * Handles user authentication via Magic Link email
+ * Server Action to call the Supabase signInWithOtp function
+ */
 export async function login(
     _prevState: AuthState | null,
     formData: FormData
@@ -20,11 +24,10 @@ export async function login(
     // in practice, you should validate your inputs
     const email = formData.get("email") as string;
 
-    // MagicLinkでのsignup/signin
+    // Signup/Signin with MagicLink
     const { error } = await supabase.auth.signInWithOtp({
         email: email,
         options: {
-            // TODO: Magic Link クリック後のリダイレクト先の設定
             emailRedirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/confirm`,
         },
     });
@@ -49,10 +52,14 @@ export async function login(
     };
 }
 
+/**
+ * Logs out the current user and redirects to home page
+ * Server Action to call the Supabase signOut function
+ */
 export async function logout() {
     const supabase = await createClient();
     await supabase.auth.signOut();
-    
+
     // Clear cached user data across the app
     revalidatePath("/", "layout");
     return redirect("/");

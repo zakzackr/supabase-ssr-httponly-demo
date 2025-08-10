@@ -3,6 +3,9 @@ import { redirect } from "next/navigation";
 import { UserProfile } from "@/components/UserProfile";
 import type { User } from "@supabase/supabase-js";
 
+/**
+ * Protected page component that requires authentication
+ */
 export default async function PrivatePage() {
     const supabase = await createClient();
 

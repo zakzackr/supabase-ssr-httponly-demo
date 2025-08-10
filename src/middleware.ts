@@ -1,6 +1,10 @@
 import { type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 
+/**
+ * Next.js middleware function for authentication handling
+ * Intercepts requests to update Supabase sessions and protect routes
+ */
 export async function middleware(request: NextRequest) {
     return await updateSession(request);
 }

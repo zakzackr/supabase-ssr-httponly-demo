@@ -2,7 +2,9 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
 /**
- * create server-side supabase clinet
+ * Create server-side Supabase client
+ * to access Supabase from Server Components, Server Actions, and Route Handlers,
+ * which run only on the server.
  *
  * ref:https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=app
  */
@@ -19,6 +21,8 @@ export async function createClient() {
                 },
                 setAll(cookiesToSet) {
                     try {
+                        // Set authentication cookies with secure options(httpOnly, sameSite, secure, etc.)
+                        // This handles cookie updates from Server Actions and Route Handlers
                         cookiesToSet.forEach(({ name, value, options }) => {
                             cookieStore.set(name, value, {
                                 ...options,

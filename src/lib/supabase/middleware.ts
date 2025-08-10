@@ -2,11 +2,11 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 /**
- * update supabase session
+ * Updates Supabase session and handles authentication middleware
+ * Refreshes user session, manages httpOnly cookies, and protects private routes
  *
  * ref: https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=app
  */
-
 export async function updateSession(request: NextRequest) {
     let supabaseResponse = NextResponse.next({
         request,
@@ -28,6 +28,8 @@ export async function updateSession(request: NextRequest) {
                     // This ensures that any subsequent middleware or route handlers
                     // have access to the updated cookie values.
                     cookiesToSet.forEach(({ name, value, options }) =>
+                        // Passing the refreshed Auth token to Server Components,
+                        // so they don't attempt to refresh the same token themselves.
                         request.cookies.set(name, value)
                     );
                     supabaseResponse = NextResponse.next({
@@ -36,9 +38,11 @@ export async function updateSession(request: NextRequest) {
 
                     // TLDR: This makes sure the client gets the cookies
                     // This sets the cookies on the response object that will be sent back to the client.
-                    // The additional options (httpOnly, secure, etc.) are important security settings
+                    // The additional options (httpOnly, sameSite, secure, etc.) are important security settings
                     // that should be applied to the cookies sent to the browser.
                     cookiesToSet.forEach(({ name, value, options }) => {
+                        // Passing the refreshed Auth token to the browser,
+                        // so it replaces the old token.
                         supabaseResponse.cookies.set(name, value, {
                             ...options,
                             path: "/",

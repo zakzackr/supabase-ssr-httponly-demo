@@ -1,5 +1,7 @@
-// src/app/public/page.tsx
-
+/**
+ * Public page component accessible to all users
+ * No authentication required to view this content
+ */
 export default function PublicPage() {
     return (
         <main className="p-8">
