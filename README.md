@@ -37,7 +37,7 @@ Rename the `.env.example` file to `.env.local` in the root directory. Set your s
 
 ```bash
 NEXT_PUBLIC_APP_URL=http://localhost:3002
-NEXT_PUBLIC_SUPABASE_URL=https://<your-project-id>.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://<your_supabase_project_id>.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=<your_supabase_project_publishable_key>
 NODE_ENV=development
 ```
