@@ -1,13 +1,9 @@
 # supabase-ssr-httponly-demo
 
-Server-side authentication demo using Supabase and Next.js with httpOnly cookies.
-Implements Magic Link authentication with complete server-side session management.
+A Next.js demo showcasing Supabase SSR authentication with
+httpOnly cookies and Magic Link login.
 
-## Tech Stack
-
--   **Framework**: Next.js 15 (App Router)
--   **Authentication**: Supabase (@supabase/ssr)
--   **Language**: TypeScript
+Uses @supabase/ssr, and Next.js 15 (App Router), TypeScript.
 
 ## Key Features
 
@@ -125,9 +121,7 @@ Passwordless login can:
 -   Reduce support burden of dealing with password resets and other password-related flows
 ```
 
-# Pros and Cons of HttpOnly Cookie Authentication
-
-_Using secure cookie attributes (httpOnly, sameSite, secure) with @supabase/ssr_
+# @supabase/ssr + HttpOnly Cookies Authentication: Pros and Cons
 
 ## ✅ Pros
 
@@ -164,3 +158,8 @@ This implementation enhances security!!
 -   [Listen to auth events](https://supabase.com/docs/reference/javascript/auth-onauthstatechange)
 
 Also inspired by [j4w8n/sveltekit-supabase-ssr](https://github.com/j4w8n/sveltekit-supabase-ssr)
+
+## Feedback & Contributions
+
+Any feedback, comments, and questions are always welcome through
+[Discussions](https://github.com/zakzackr/supabase-ssr-httponly-demo/discussions) or [Issues](https://github.com/zakzackr/supabase-ssr-httponly-demo/issues)!
