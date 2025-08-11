@@ -10,7 +10,7 @@ Uses @supabase/ssr, and Next.js 15 (App Router), TypeScript.
 -   Magic Link passwordless authentication
 -   Server-side session management with secure cookies(httpOnly, sameSite, secure, etc.)
 -   Protected routes with middleware
--   New API keys
+-   New API keys(Publishable key)
 
 ## Prerequisites
 
