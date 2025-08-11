@@ -67,7 +67,13 @@ npm install
 
 ### 1. Environment Variables
 
-Rename the `.env.example` file to `.env.local` in the root directory. Set your supabase project configurations:
+Copy the `.env.example` file to `.env.local` in the root directory:
+
+```bash
+cp .env.example .env.local
+```
+
+Then edit `.env.local` with your Supabase project configurations:
 
 ```bash
 NEXT_PUBLIC_APP_URL=http://localhost:3002
