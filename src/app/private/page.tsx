@@ -29,7 +29,7 @@ export default async function PrivatePage() {
                 </p>
                 {/* Component to display user information */}
                 <div className="mt-8">
-                    <UserProfile user={user as User} />
+                    <UserProfile user={user} />
                 </div>
             </div>
         </main>
