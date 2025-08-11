@@ -9,7 +9,7 @@ Uses @supabase/ssr, and Next.js 15 (App Router), TypeScript.
 
 https://github.com/user-attachments/assets/44796483-a487-4fd3-ae85-b7db25a42061
 
-\_After login, verify that httpOnly is set to true by opening DevTools → Application tab → Storage → Cookies → select http://localhost:3002
+_After login, verify that httpOnly is set to true by opening DevTools → Application tab → Storage → Cookies → select http://localhost:3002_
 
 ## Key Features
 
