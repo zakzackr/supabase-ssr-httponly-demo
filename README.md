@@ -173,5 +173,8 @@ Also inspired by [j4w8n/sveltekit-supabase-ssr](https://github.com/j4w8n/sveltek
 
 ## Feedback & Contributions
 
-Any feedback, comments, and questions are always welcome through
-[Discussions](https://github.com/zakzackr/supabase-ssr-httponly-demo/discussions) or [Issues](https://github.com/zakzackr/supabase-ssr-httponly-demo/issues)!
+Any feedback, comments, and questions are always welcome through:
+
+-   [GitHub Discussions](https://github.com/zakzackr/supabase-ssr-httponly-demo/discussions)
+-   [GitHub Issues](https://github.com/zakzackr/supabase-ssr-httponly-demo/issues)
+-   [Supabase Discord discussion](https://discord.com/channels/839993398554656828/1404384759001513994/1404384759001513994)
