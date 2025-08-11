@@ -38,7 +38,7 @@ export async function updateSession(request: NextRequest) {
 
                     // TLDR: This makes sure the client gets the cookies
                     // This sets the cookies on the response object that will be sent back to the client.
-                    // The additional options (httpOnly, sameSite, secure, etc.) are important security settings
+                    // The additional options (httpOnly, sameSite, and secure, etc.) are important security settings
                     // that should be applied to the cookies sent to the browser.
                     cookiesToSet.forEach(({ name, value, options }) => {
                         // Passing the refreshed Auth token to the browser,

@@ -5,6 +5,10 @@ httpOnly cookies and Magic Link login.
 
 Uses @supabase/ssr, and Next.js 15 (App Router), TypeScript.
 
+## Demo
+
+https://github.com/user-attachments/assets/44796483-a487-4fd3-ae85-b7db25a42061
+
 ## Key Features
 
 -   Magic Link passwordless authentication
